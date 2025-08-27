@@ -1,6 +1,6 @@
 [submodule "submodules/SuGaR"]
-	path = submodules/SuGaR
+	path = third_party/SuGaR
 	url = https://github.com/Anttwo/SuGaR.git
 [submodule "submodules/SAGA"]
-	path = submodules/SAGA
+	path = third_party/SAGA
 	url = https://github.com/Jumpat/SegAnyGAussians.git
