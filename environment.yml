@@ -1,0 +1,34 @@
+name: 3drise
+channels:
+- pytorch
+- nvidia
+- conda-forge
+- defaults
+dependencies:
+- python=3.9
+- cudatoolkit=11.8
+- plyfile=0.8.1
+- pip
+- pytorch=2.0.1
+- torchvision=0.15.2
+- torchaudio=2.0.2
+- pytorch3d=0.7.4
+- tqdm
+- fvcore
+- iopath
+- plotly
+- jupyterlab
+- nodejs
+- ipywidgets
+- rich
+- ffmpeg
+- pip:
+  - open3d
+  - PyMCubes
+  - submodules/diff-gaussian-rasterization
+  - submodules/diff-gaussian-rasterization_contrastive_f
+  - submodules/simple-knn
+  - third_party/SuGaR
+  - third_party/SAGA
+  - third_party/segment-anything
+  - third_party/kmeans_pytorch
