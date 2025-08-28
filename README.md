@@ -29,6 +29,8 @@ The software requirements are the following:
 - C++ Compiler for PyTorch extensions
 - CUDA toolkit 11.8 for PyTorch extensions
 - C++ Compiler and CUDA SDK must be compatible
+- FFMPEG for frames extractions from video datasets
+- COLMAP for camera poses estimation from images
 
 Please refer to the original [3D Gaussian Splatting](https://github.com/graphdeco-inria/gaussian-splatting) repository for more details about requirements.
 
