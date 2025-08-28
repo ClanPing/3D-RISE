@@ -1,8 +1,21 @@
 # 3D-RISE
 [ELSP2025] 3D Reconstruction, Integration, Segmentation, and Editing (3D-RISE) to revolutionize construction site simulations.
+
 | [Paper](https://www.elspub.com/papers/j/1893818303650844672) |
 
-Abstract: *The construction industry requires dynamic and realistic site simulations for effective site layout planning (SLP) and safety training. This paper introduces 3-Dimensional Reconstruction, Integration, Segmentation, and Editing (3D-RISE), a novel workflow integrating 3D Gaussian Splatting (3DGS), Segment Any 3D Gaussians (SAGA), and Surface-Aligned Gaussian Splatting for Efficient 3D Mesh Reconstruction and High-Quality Mesh Rendering (SuGaR) to create customisable and high-quality 3D construction scenes. The workflow leverages advanced segmentation and mesh reconstruction techniques to generate editable models while maintaining scene realism. Evaluation metrics from the initial 3DGS outputs across three image datasets (namely, steel structure, excavator, and random model) demonstrate the effectiveness of the pipeline, achieving peak signal-to-noise ratio (PSNR) values of 22.984, 35.254, and 25.854, respectively, after 30K iterations. The structural similarity index measure (SSIM) scores ranged from 0.783 to 0.951, highlighting the workflow’s ability to generate visually accurate outputs. Despite its robust capabilities, 3D-RISE has limitations, including reliance on datasets with 360-degree coverage, the inability to directly modify 3DGS-rendered scenes in Unreal Engine (UE) version 5.3, and a high demand for computational power. Running 3D-RISE on GPUs with lower specifications significantly increases processing time, requiring optimisation through downsampling or lower iteration counts, which may affect output quality. Future work focuses on integrating generative artificial intelligence (AI) to generate 3D-ready models from single images, reducing dataset requirements and computational overhead while improving scalability.*
+![Graphical abstract](assets/graphical_abstract.png)
+
+The 3D-RISE workflow is designed to revolutionize construction site simulations by enabling high-quality, editable 3D environments for construction site layout planning and simulation training.
+
+This project utilizes 3D Gaussian Splatting (3DGS) as the core reconstruction technique, transforming captured image datasets into realistic and computationally efficient 3D scenes.
+To enhance and customize these reconstructions, 3D-RISE integrates these powerful open-source repositories:
+
+- [SAGA (Segment Any 3D GAussians)](https://github.com/Jumpat/SegAnyGAussians)
+- [SuGaR (Surface-Aligned Gaussian Splatting)](https://github.com/Anttwo/SuGaR/tree/main?tab=readme-ov-file)
+- [XScene-UEPlugin (Unreal Engine 5 3DGS plugins)](https://github.com/xverse-engine/XScene-UEPlugin)
+
+By combining these tools, 3D-RISE allows the generation of customizable 3D construction sites where individual components can be segmented, refined and reused for simulation workflows. The outcome is a pipeline that bridges raw 3D reconstruction and practical applications in the Architecture, Engineering, and Construction (AEC) industry.
+
 ## Installation
 ### Requirements
 
