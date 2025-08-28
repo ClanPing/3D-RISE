@@ -1,7 +1,7 @@
-[submodule "submodules/SuGaR"]
+[submodule "SuGaR"]
 	path = SuGaR
 	url = https://github.com/Anttwo/SuGaR.git
-[submodule "submodules/SAGA"]
+[submodule "SAGA"]
 	path = SAGA
 	url = https://github.com/Jumpat/SegAnyGAussians.git
 [submodule "third_party/kmeans_pytorch"]
