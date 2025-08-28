@@ -6,7 +6,8 @@ Abstract: *The construction industry requires dynamic and realistic site simulat
 ## Installation
 ### Requirements
 
-Ran in Ubuntu 22.04
+Ran in Ubuntu 22.04.
+
 The software requirements are the following:
 
 - Conda (recommended for easy setups)
