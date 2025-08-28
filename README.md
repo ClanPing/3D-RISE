@@ -18,6 +18,20 @@ To enhance and customize these reconstructions, 3D-RISE integrates these powerfu
 
 By combining these tools, 3D-RISE allows the generation of customizable 3D construction sites where individual components can be segmented, refined and reused for simulation workflows. The outcome is a pipeline that bridges raw 3D reconstruction and practical applications in the Architecture, Engineering, and Construction (AEC) industry.
 
+## BibteX
+
+If you find this project helpful for your research, pleasure consider citing the report and giving a ⭐.
+```
+@article{Chai2025_SC_0019,
+  author  = {Chai, P. and Hou, L. and Lo, X. and Zhang, G. and Chen, H. and others},
+  title   = {Revolutionising construction site simulations with automated 3D segmentation and mesh construction},
+  journal = {Smart Construction},
+  year    = {2025},
+  doi     = {10.55092/sc20250019},
+  url     = {https://doi.org/10.55092/sc20250019}
+}
+```
+
 ## Requirements
 
 Ran in Ubuntu 22.04.
