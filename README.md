@@ -18,8 +18,7 @@ To enhance and customize these reconstructions, 3D-RISE integrates these powerfu
 
 By combining these tools, 3D-RISE allows the generation of customizable 3D construction sites where individual components can be segmented, refined and reused for simulation workflows. The outcome is a pipeline that bridges raw 3D reconstruction and practical applications in the Architecture, Engineering, and Construction (AEC) industry.
 
-## Installation
-### Requirements
+## Requirements
 
 Ran in Ubuntu 22.04.
 
@@ -34,7 +33,7 @@ The software requirements are the following:
 
 Please refer to the original [3D Gaussian Splatting](https://github.com/graphdeco-inria/gaussian-splatting) repository for more details about requirements.
 
-### Installation
+## Installation
 
 Start by cloning this repository:
 ```bash
@@ -51,4 +50,56 @@ Next, install the dependencies:
 ```bash
 conda env create -f environment.yml
 conda activate 3drise
+```
+
+## Prepare data
+
+`datasets` folder contains excavator, sign, structures to be used in this project. You can also use your own custom dataset.
+
+To convert a video to images, make sure to install `ffmpeg` and run the following command:
+```bash
+# Install ffmpeg
+sudo apt upate
+sudo apt install -y ffmpeg
+
+# Execute command
+ffmpeg -i <Path to the video file> -qscale:v 1 -qmin 1 -vf fps=<FPS> %04d.jpg
+```
+where `<FPS>` is the desired sampling rate of the video images. An FPS value of 1 corresponds to sampling one image per second. We recommend to adjust the sampling rate to the length of the video, so that the number of sampled images is between 100 and 300.
+
+Dataset structure below is required for COLMAP camera poses estimation:
+```
+<location>
+|---input
+	|---<image 0>
+	|---<image 1>
+	|---...
+|---<path to the video file>
+```
+
+Make sure to install `colmap` and run:
+```bash
+# Install colmap
+sudo apt update
+sudo apt install -y colmap
+
+# Execute command
+python convert.py -s <location>
+```
+
+The expected dataset structure is as follows:
+```
+<location>
+|---images
+|   |---<image 0>
+|   |---<image 1>
+|   |---...
+|---sparse
+    |---0
+        |---cameras.bin
+        |---images.bin
+        |---points3D.bin
+|---run-colmap-geometric.sh
+|---run-colmap-photometric.sh
+|---<path to the video file>
 ```
