@@ -32,6 +32,10 @@ If you find this project helpful for your research, pleasure consider citing the
 }
 ```
 
+## Acknowledgement
+
+The implementation of 3D-RISE heavily refers to [Gaussian Splatting](https://github.com/graphdeco-inria/gaussian-splatting), [SAGA](https://github.com/Jumpat/SegAnyGAussians), [SuGaR](https://github.com/Anttwo/SuGaR), [XScene-UEPlugin](https://github.com/xverse-engine/XScene-UEPlugin) and we sincerely thank them for their contributions in making this research project successful. We also gratefully acknowledge computational resource grants through [RMIT AWS Supercomputing Hub (RACE HUB)](https://www.rmit.edu.au/partner/hubs/race).
+
 ## Requirements
 
 Ran in Ubuntu 22.04.
