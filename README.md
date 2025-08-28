@@ -3,11 +3,14 @@
 
 | [Paper](https://www.elspub.com/papers/j/1893818303650844672) |
 
-![Graphical abstract](assets/graphical_abstract.png)
+<p align="center">
+<img src="assets/graphical_abstract.png" alt="Workflow Overview" width="700"/>
+</p>
 
 The 3D-RISE workflow is designed to revolutionize construction site simulations by enabling high-quality, editable 3D environments for construction site layout planning and simulation training.
 
 This project utilizes 3D Gaussian Splatting (3DGS) as the core reconstruction technique, transforming captured image datasets into realistic and computationally efficient 3D scenes.
+
 To enhance and customize these reconstructions, 3D-RISE integrates these powerful open-source repositories:
 
 - [SAGA (Segment Any 3D GAussians)](https://github.com/Jumpat/SegAnyGAussians)
