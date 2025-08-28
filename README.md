@@ -1,6 +1,5 @@
 # 3D-RISE
 [ELSP2025] 3D Reconstruction, Integration, Segmentation, and Editing (3D-RISE) to revolutionize construction site simulations.
-
 | [Paper](https://www.elspub.com/papers/j/1893818303650844672) |
 
 <p align="center">
