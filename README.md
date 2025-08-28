@@ -49,7 +49,7 @@ The software requirements are the following:
 - FFMPEG for frames extractions from video datasets
 - COLMAP for camera poses estimation from images
 
-Please refer to the original [3D Gaussian Splatting](https://github.com/graphdeco-inria/gaussian-splatting) repository for more details about requirements.
+Please refer to the original [3D Gaussian Splatting repository](https://github.com/graphdeco-inria/gaussian-splatting) for more details about requirements.
 
 ## Installation
 
