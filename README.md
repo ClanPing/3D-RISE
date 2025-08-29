@@ -124,12 +124,10 @@ The expected dataset structure is as follows:
 
 ## 3D segmentation
 
-<p align="left">
-  <img src="assets/excavator.gif" width="125" alt="Model 1">
+<p align="center">
+  <img src="assets/excavator.png" width="220" alt="excavator png">
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="assets/sign.gif" width="125" alt="Model 2">
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="assets/structure.gif" width="125" alt="Model 3">
+  <img src="assets/excavator.gif" width="125" alt="excavator 3d">
 </p>
 
 Please refer to the original [SAGA repository](https://github.com/Jumpat/SegAnyGAussians) for more detailed instructions.
