@@ -59,7 +59,7 @@ conda activate 3drise
 To convert a video to images, make sure to install `ffmpeg` and run the following command:
 ```bash
 # Install ffmpeg
-sudo apt upate
+sudo apt update
 sudo apt install -y ffmpeg
 
 # Execute command
