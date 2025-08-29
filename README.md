@@ -130,7 +130,7 @@ The expected dataset structure is as follows:
   <img src="assets/excavator.gif" height="150" alt="excavator OBJ">
 </p>
 
-### A) 3D segmentation
+### 3D segmentation
 
 ```bash
 cd <SAGA directory>
@@ -141,6 +141,11 @@ Please refer to the original [SAGA repository](https://github.com/Jumpat/SegAnyG
 1) Train Gaussian Splatting:
 ```bash
 python train_scene.py -s <path to COLMAP or NeRF Synthetic dataset>
+
+# OPTIONAL: evaluation
+python train.py -s <path to COLMAP or NeRF Synthetic dataset> --eval # Train with train/test split
+python render.py -m <path to trained model> # Generate renderings
+python metrics.py -m <path to trained model> # Compute error metrics on renderings
 ```
 
 Download the pretrained [public ViT-H model](https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth) for Segment Anything Model (SAM). The downloaded model path will be referred as `<path to the pre-trained SAM model>`.
@@ -148,29 +153,28 @@ Download the pretrained [public ViT-H model](https://dl.fbaipublicfiles.com/segm
 2) Obtain masks segmentation and scales:
 ```bash
 python extract_segment_everything_masks.py --image_root <path to COLMAP or NeRF Synthetic dataset> --sam_checkpoint_path <path to the pre-trained SAM model> --downsample <1/2/4/8>
-python get_scale.py --image_root <path to COLMAP or NeRF Synthetic dataset> --model_path <path to output 3DGS model>
+python get_scale.py --image_root <path to COLMAP or NeRF Synthetic dataset> --model_path <path to trained model>
 ```
 Note that sometimes the downsample is essential due to the limited GPU memory.
 
 3) Train 3D Gaussian affinity features:
 ```bash
-python train_contrastive_feature.py -m <path to output 3DGS model> --iterations 10000 --num_sampled_rays 1000
+python train_contrastive_feature.py -m <path to trained model> --iterations 10000 --num_sampled_rays 1000
 ```
 
 4) GUI usage:
 ```bash
-python saga_gui.py --model_path <path to the output 3DGS model>
+python saga_gui.py --model_path <path to trained model>
 ```
 After selecting the interest target(s), you can click `segment 3D` to get the 3D segmentation results preview. Select `save as` to save the segmentation results in `./segmentation_res/model_name.pt`.
 
 5) Rendering:
 ```bash
-python render.py -m <path to output 3DGS model> --precomputed_mask <path to the segmentation results> --target scene --segment
+python render.py -m <path to trained model> --precomputed_mask <path to the segmentation results> --target scene --segment
 ```
 Retrain camera poses estimation for your new segmentation datasets before proceeding towards mesh reconstruction.
 
-
-### B) Mesh reconstruction
+### Mesh reconstruction
 
 If you do not want to perform segmentation, you can skip directly to this step.
 
@@ -196,21 +200,28 @@ python train_scene.py -s <path to COLMAP or NeRF Synthetic dataset>
 
 2) Optimize coarse SuGaR:
 ```bash
-python train_coarse_density.py -s <path to COLMAP or NeRF Synthetic dataset> -c <path to output 3DGS model>
+python train_coarse_density.py -s <path to COLMAP or NeRF Synthetic dataset> -c <path to trained model>
 ```
 
 3) Extract mesh from coarse SuGaR:
 ```bash
-python extract_mesh.py -s <path to COLMAP or NeRF Synthetic dataset> -c <path to output 3DGS model> -m <path to coarse sugar output.pt>
+python extract_mesh.py -s <path to COLMAP or NeRF Synthetic dataset> -c <path to trained model> -m <path to coarse sugar output.pt>
 ```
 
 4) Refine SuGaR:
 ```bash
-python train_refined.py -s <path to COLMAP or NeRF Synthetic dataset> -c <path to output 3DGS model> -m <path to coarse mesh sugar output.ply>
+python train_refined.py -s <path to COLMAP or NeRF Synthetic dataset> -c <path to trained model> -m <path to coarse mesh sugar output.ply>
 ```
 
 5) Extract mesh and texture from refined SuGaR:
 ```bash
 python extract_refined_mesh_with_texture.py -s <path to COLMAP or NeRF Synthetic dataset> -c <path to output 3DGS model> -m <path to refined sugar output.pt>
 ```
-Results would appear in `./refined_ply` folder containing `PNG`, `MTL`, `OBJ` file.
+Results would appear in `./refined_ply` folder containing `.PNG`, `.MTL`, `.OBJ` file.
+
+6) Evaluation:
+Create a `.json` config file containing the paths to the scenes in the following format: `{source_images_dir_path: vanilla_gaussian_splatting_checkpoint_path}`. Then run the script as follows:
+```bash
+python metrics.py --scene_config <Path to the .json file> -r <"sdf" or "density"> 
+```
+Results are saved in a `.json` file in the `output/metrics/` directory.
