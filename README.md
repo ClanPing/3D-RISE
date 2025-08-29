@@ -72,7 +72,7 @@ conda activate 3drise
 
 ## Prepare data
 
-`datasets` folder contains excavator, sign, structures to be used in this project. You can also use your own custom dataset.
+`datasets` folder contains excavator, sign, structure to be used in this project. You can also use your own custom dataset.
 
 To convert a video to images, make sure to install `ffmpeg` and run the following command:
 ```bash
