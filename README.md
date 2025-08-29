@@ -121,3 +121,17 @@ The expected dataset structure is as follows:
 |---run-colmap-photometric.sh
 |---<path to the video file>
 ```
+
+## 3D segmentation
+
+<p align="left">
+  <img src="assets/excavator.gif" width="125" alt="Model 1">
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="assets/sign.gif" width="125" alt="Model 2">
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="assets/structure.gif" width="125" alt="Model 3">
+</p>
+
+Please refer to the original [SAGA repository](https://github.com/Jumpat/SegAnyGAussians) for more detailed instructions.
+
+Download the pretrained [public ViT-H model](https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth) for Segment Anything Model (SAM). The downloaded model path will be referred as `<path to the pre-trained SAM model>` in the following commands ahead.
