@@ -18,24 +18,6 @@ To enhance and customize these reconstructions, 3D-RISE integrates these powerfu
 
 By combining these tools, 3D-RISE allows the generation of customizable 3D construction sites where individual components can be segmented, refined and reused for simulation workflows. The outcome is a pipeline that bridges raw 3D reconstruction and practical applications in the Architecture, Engineering, and Construction (AEC) industry.
 
-## BibteX
-
-If you find this project helpful for your research, pleasure consider citing the report and giving a ⭐.
-```
-@article{Chai2025_SC_0019,
-  author  = {Chai, P. and Hou, L. and Lo, X. and Zhang, G. and Chen, H. and others},
-  title   = {Revolutionising construction site simulations with automated 3D segmentation and mesh construction},
-  journal = {Smart Construction},
-  year    = {2025},
-  doi     = {10.55092/sc20250019},
-  url     = {https://doi.org/10.55092/sc20250019}
-}
-```
-
-## Acknowledgement
-
-The implementation of 3D-RISE heavily refers to [Gaussian Splatting](https://github.com/graphdeco-inria/gaussian-splatting), [SAGA](https://github.com/Jumpat/SegAnyGAussians), [SuGaR](https://github.com/Anttwo/SuGaR), [XScene-UEPlugin](https://github.com/xverse-engine/XScene-UEPlugin) and we sincerely thank them for their contributions in making this research project successful. We also gratefully acknowledge computational resource grants through [RMIT AWS Supercomputing Hub (RACE HUB)](https://www.rmit.edu.au/partner/hubs/race).
-
 ## Requirements
 
 Ran in Ubuntu 22.04.
@@ -230,5 +212,37 @@ Results are saved in a `.json` file in the `output/metrics/` directory.
 
 ## Visualization
 
-3d visualization software such as Blender, CloudCompare can be used to visualize the results. We used Unreal Engine 5 to load and combine the processed models and scenes inside. The plugin for importing 3DGS rendered scene can be found [here](https://github.com/xverse-engine/XScene-UEPlugin).
+3d visualization software such as Blender, CloudCompare can be used to visualize the results. We used [XScene-UEPlugin](https://github.com/xverse-engine/XScene-UEPlugin) to load and combine the processed models and scenes inside Unreal Engine 5. Please refer to the repository for more detailed information.
 
+<table align="center">
+  <tr>
+    <td align="center">
+      <img src="assets/pre-scene.png" height="225" alt="Pic A">
+    </td>
+    <td align="center">
+      <img src="assets/post-scene.png" height="225" alt="Pic B">
+    </td>
+  </tr>
+  <tr>
+    <td align="center"><sub>Rendered scene</sub></td>
+    <td align="center"><sub>Scene enhancement</sub></td>
+  </tr>
+</table>
+
+## BibteX
+
+If you find this project helpful for your research, pleasure consider citing the report and giving a ⭐.
+```
+@article{Chai2025_SC_0019,
+  author  = {Chai, P. and Hou, L. and Lo, X. and Zhang, G. and Chen, H. and others},
+  title   = {Revolutionising construction site simulations with automated 3D segmentation and mesh construction},
+  journal = {Smart Construction},
+  year    = {2025},
+  doi     = {10.55092/sc20250019},
+  url     = {https://doi.org/10.55092/sc20250019}
+}
+```
+
+## Acknowledgement
+
+The implementation of 3D-RISE heavily refers to [Gaussian Splatting](https://github.com/graphdeco-inria/gaussian-splatting), [SAGA](https://github.com/Jumpat/SegAnyGAussians), [SuGaR](https://github.com/Anttwo/SuGaR), [XScene-UEPlugin](https://github.com/xverse-engine/XScene-UEPlugin) and we sincerely thank them for their contributions in making this research project successful. We also gratefully acknowledge computational resource grants through [RMIT AWS Supercomputing Hub (RACE HUB)](https://www.rmit.edu.au/partner/hubs/race).
