@@ -240,7 +240,7 @@ Results are saved in a `.json` file in the `output/metrics/` directory.
 
 ## BibteX
 
-If you find this project helpful for your research, pleasure consider citing the report and giving a ⭐.
+If you find this project helpful for your research, please consider citing the report and giving a ⭐.
 ```
 @article{Chai2025_SC_0019,
   author  = {Chai, P. and Hou, L. and Lo, X. and Zhang, G. and Chen, H. and others},
