@@ -189,9 +189,10 @@ You can run the following single script to optimize a full SuGaR model from scra
 python train_full_pipeline.py -s <path to full/segmented COLMAP dataset> -r <"dn_consistency", "density" or "sdf"> --high_poly True --refinement_time <"short", "medium", "long"> --export_obj True
 ```
 
-Or
+OR
 
-Run it one by one as follows to check each progress output:
+<details>
+<summary><span style="font-weight: bold;">Run it one by one as follows to check each progress output. Click here for details.</span></summary>
 
 1) Train Gaussian Splatting:
 ```bash
@@ -219,9 +220,15 @@ python extract_refined_mesh_with_texture.py -s <path to COLMAP or NeRF Synthetic
 ```
 Results would appear in `./refined_ply` folder containing `.PNG`, `.MTL`, `.OBJ` file.
 
-6) Evaluation:
-Create a `.json` config file containing the paths to the scenes in the following format: `{source_images_dir_path: vanilla_gaussian_splatting_checkpoint_path}`. Then run the script as follows:
+</details>
+
+For evaluation, create a `.json` config file containing the paths to the scenes in the following format: `{source_images_dir_path: vanilla_gaussian_splatting_checkpoint_path}`. Then run the script as follows:
 ```bash
 python metrics.py --scene_config <Path to the .json file> -r <"sdf" or "density"> 
 ```
 Results are saved in a `.json` file in the `output/metrics/` directory.
+
+## Visualization
+
+3d visualization software such as Blender, CloudCompare can be used to visualize the results. We used Unreal Engine 5 to load and combine the processed models and scenes inside. The plugin for importing 3DGS rendered scene can be found [here](https://github.com/xverse-engine/XScene-UEPlugin).
+
